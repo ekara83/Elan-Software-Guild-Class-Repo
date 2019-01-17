@@ -7,6 +7,7 @@ package AddressBookDao;
 
 import AddressBook.dto.Address;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -14,18 +15,22 @@ import java.util.List;
  */
 public interface AddressBookDao {
     
-    Address addAddress(String getLastName, Address address);
+    Address addAddress(String getLastName, Address address) throws AddressBookDaoException;
+           
     // adds address
-    Address removeAddress(String getLastName);
+    Address removeAddress(String getLastName) throws AddressBookDaoException;
+        
     // removes Address based off Last Name
-    Address findAddress(String getLastName);
+    Address findAddress(String getLastName) throws AddressBookDaoException;
+           
     // finds address based off Last Name
-    List<Address>getAddressCount();
+    int getAddressCount(Map<String, Address> address) throws AddressBookDaoException;
+        
+  // will count how many addresses are in the system
     
-  // need to add a list/hashmap where it will count all the addresses
-    
-    List<Address> getAllAddresses();
-    // will list All Addresses
+    List<Address> getAllAddresses() throws AddressBookDaoException;
+           
+    // will list All Addresses entered
     
     
     

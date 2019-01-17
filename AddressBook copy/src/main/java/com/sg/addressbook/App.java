@@ -10,6 +10,7 @@ import AddressBook.ui.UserIO;
 import AddressBook.ui.UserIOConsoleImpl;
 import AddressBookController.AddressBookController;
 import AddressBookDao.AddressBookDao;
+import AddressBookDao.AddressBookDaoException;
 import AddressBookDao.AddressBookDaoFileImpl;
 
 /**
@@ -17,7 +18,7 @@ import AddressBookDao.AddressBookDaoFileImpl;
  * @author elanaustin
  */
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AddressBookDaoException {
         UserIO myIo = new UserIOConsoleImpl();
         AddressBookView myView = new AddressBookView(myIo);
         AddressBookDao myDao = new AddressBookDaoFileImpl();

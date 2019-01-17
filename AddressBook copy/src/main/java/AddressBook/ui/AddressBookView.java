@@ -2,7 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+*/
 package AddressBook.ui;
 
 import AddressBook.dto.Address;
@@ -28,10 +28,10 @@ public class AddressBookView {
         io.print("3. Find Address");
         io.print("4. List Address Count");
         io.print("5. List All Addresses");
-        return io.readInt("Please select from the above choices.", 1, 5);
+        return io.readInt("Please select from the above choices.", 1, 6);
     }
     public void displayAddAddress() {
-        io.print("Add Address Menu");
+        io.print("=== Add Address Menu === ");
     }
 
     public Address getNewAddressInfo() {
@@ -53,16 +53,17 @@ public class AddressBookView {
     }
 
     public void displayAddressAdded() {
-        io.print("Address Added. Press 1 to return to Main Menu.");
+        io.print("Address successefully added. Press 1 to return to Main Menu.");
     }
-
+    
+    
     public void displayDisplayAddressMenu() {
-        io.print("List Addresses Menu: ");
+        io.print("===== List Addresses Menu ==== ");
     }
 
     public void displayAddressList(List<Address> addressList) {
         for (Address currentAddress : addressList) {
-            io.print(currentAddress.getFirstName() + currentAddress.getFirstName());
+            io.print(currentAddress.getFirstName() + " " + currentAddress.getLastName());
             io.print(currentAddress.getStreetAddress());
             io.print(currentAddress.getCityName() + currentAddress.getStateName() + currentAddress.getZipCode());
         }
@@ -72,11 +73,11 @@ public class AddressBookView {
     
 
     public void displayDisplayFindAddress() {
-        io.print("Find Address Menu");
+        io.print("=== Find Address Menu ====");
     }
 
     public String getLastNameAddress() {
-        return io.readString("Please enter the last name of the address to find:");
+        return io.readString("=== Please enter the last name of the address to find === :");
     }
 
     public void displayAddress(Address address) {
@@ -91,7 +92,11 @@ public class AddressBookView {
     }
 
     public void displayRemoveAddress() {
-        io.print("Remove Address");
+        io.print("=== Remove Address === ");
+    }
+    
+    public String getAddressLastName() {
+        return io.readString("Please enter the Last Name.");
     }
     
     public void displayRemoveAddressSuccess() {
@@ -102,4 +107,12 @@ public class AddressBookView {
     public void displayUnknownCommand() {
         io.print("Uknown Command");
     }
+
+    public void displayErrorMessage(String errorMsg) {
+        io.print("==== ERROR ====");
+        io.print(errorMsg);
+        
+    }
+
+    
 }

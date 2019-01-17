@@ -12,6 +12,8 @@ import java.util.Scanner;
  */
 public class UserIOConsoleImpl implements UserIO {
     private Scanner userInput = new Scanner(System.in);
+        
+    
     
     @Override
     public void print(String msg) {
@@ -61,7 +63,7 @@ public class UserIOConsoleImpl implements UserIO {
 
     @Override
     public int readInt(String prompt) {
-          System.out.println(prompt);
+        System.out.println(prompt);
         String input = userInput.nextLine();
         int numInput = Integer.parseInt(input);
         return numInput;
