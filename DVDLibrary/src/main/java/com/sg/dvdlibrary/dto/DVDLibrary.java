@@ -10,6 +10,7 @@ package com.sg.dvdlibrary.dto;
  * @author elanaustin
  */
 public class DVDLibrary {
+    private String dvdID;
     private String dvdTitle;
     private String releaseDate;
     private String mpaaRating;
@@ -66,6 +67,14 @@ public class DVDLibrary {
 
     public void setMpaaRating(String mpaaRating) {
         this.mpaaRating = mpaaRating;
+    }
+
+    public String getDvdID() {
+        return dvdID;
+    }
+
+    public void setDvdID(String dvdID) {
+        this.dvdID = dvdID;
     }
     
     

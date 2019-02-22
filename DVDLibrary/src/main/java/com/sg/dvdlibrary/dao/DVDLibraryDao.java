@@ -14,15 +14,15 @@ import java.util.List;
  */
 public interface DVDLibraryDao {
     
-    DVDLibrary addDVD(String dvdTitle, DVDLibrary dvdLibrary);
+    DVDLibrary addDVD(String dvdTitle, DVDLibrary dvdLibrary) throws DVDLibraryDaoException ;
     
-    DVDLibrary removeDVD(String dvdTitle);
+    DVDLibrary removeDVD(String dvdTitle) throws DVDLibraryDaoException ;
     
-    DVDLibrary editDVD(String dvdTitle, DVDLibrary dvdLibrary);
+    DVDLibrary editDVD(String dvdTitle, DVDLibrary dvdLibrary) throws DVDLibraryDaoException;
+     
+    List<DVDLibrary>getAllDVDs() throws DVDLibraryDaoException ;
     
-    List<DVDLibrary>getAllDVDs();
-    
-    DVDLibrary getDVD(String dvdTitle);
+    DVDLibrary getDVD(String dvdTitle) throws DVDLibraryDaoException ;
     
     
 
